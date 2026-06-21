@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Divine Session — Shiva Science</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:       #b8955a;
+      --gold-light: #d4af78;
+      --gold-pale:  #f5edd9;
+      --deep:       #0f0c08;
+      --dark:       #1a1510;
+      --mid:        #2c241b;
+      --warm:       #3d3025;
+      --text:       #e8ddd0;
+      --muted:      #9e8e7a;
+      --white:      #fdf8f2;
+      --radius:     2px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--deep);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(to bottom, rgba(15,12,8,0.95), transparent);
+      backdrop-filter: blur(6px);
+    }
+
+    nav .logo img {
+      height: 44px;
+      filter: brightness(1.1);
+    }
+
+    nav .cta-nav {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--deep);
+      background: var(--gold);
+      padding: 10px 24px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    nav .cta-nav:hover { background: var(--gold-light); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 120px 80px 80px;
+      gap: 60px;
+      background:
+        linear-gradient(135deg, rgba(15,12,8,0.97) 40%, rgba(44,36,27,0.92) 100%),
+        url('https://storage.files-vault.com/landing_pages/95124/0b3869c3af66e89464d1052705dcfd57-ffcffca9afa875030c0f1471180950e4-Add-a-heading-1.webp') center/cover no-repeat;
+    }
+
+    .hero-text { max-width: 560px; }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(184,149,90,0.35);
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(40px, 5vw, 62px);
+      font-weight: 300;
+      line-height: 1.12;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+
+    .session-meta {
+      display: flex;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+
+    .session-meta .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .meta-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .meta-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      color: var(--gold-light);
+      font-weight: 500;
+    }
+
+    .divider-line {
+      width: 1px;
+      background: rgba(184,149,90,0.3);
+      align-self: stretch;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--deep);
+      background: var(--gold);
+      padding: 16px 40px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    .trust-line {
+      margin-top: 20px;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── HERO IMAGE SIDE ─── */
+    .hero-image {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 480px;
+      border-radius: 0;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+      border: 1px solid rgba(184,149,90,0.2);
+    }
+
+    /* ─── SECTION BASE ─── */
+    section {
+      padding: 100px 80px;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 64px;
+    }
+
+    .section-header .eyebrow { display: block; }
+
+    .section-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.15;
+    }
+
+    .section-header p {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 16px;
+      font-weight: 300;
+    }
+
+    /* ─── WHAT YOU'LL EXPERIENCE ─── */
+    .experience {
+      background: var(--dark);
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1px;
+      background: rgba(184,149,90,0.1);
+      border: 1px solid rgba(184,149,90,0.1);
+    }
+
+    .exp-card {
+      background: var(--dark);
+      padding: 48px 40px;
+      transition: background 0.2s;
+    }
+
+    .exp-card:hover { background: var(--mid); }
+
+    .exp-icon {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(184,149,90,0.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .exp-icon svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+
+    .exp-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .exp-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ─── HOW IT WORKS ─── */
+    .how {
+      background: var(--deep);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(12.5% + 20px);
+      right: calc(12.5% + 20px);
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(184,149,90,0.4), transparent);
+    }
+
+    .step {
+      padding: 0 32px;
+      text-align: center;
+    }
+
+    .step-num {
+      width: 56px;
+      height: 56px;
+      border: 1px solid rgba(184,149,90,0.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      background: var(--deep);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--gold);
+      position: relative;
+      z-index: 1;
+    }
+
+    .step h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ─── GUIDE / ABOUT ─── */
+    .guide {
+      background: var(--mid);
+    }
+
+    .guide-inner {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .guide-image {
+      position: relative;
+    }
+
+    .guide-image img {
+      width: 100%;
+      border: 1px solid rgba(184,149,90,0.2);
+      box-shadow: 0 32px 60px rgba(0,0,0,0.5);
+    }
+
+    .guide-image::before {
+      content: '';
+      position: absolute;
+      top: -16px; left: -16px;
+      right: 16px; bottom: 16px;
+      border: 1px solid rgba(184,149,90,0.15);
+      pointer-events: none;
+    }
+
+    .guide-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 3.5vw, 46px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+
+    .guide-title {
+      font-size: 13px;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      font-weight: 500;
+      margin-bottom: 28px;
+    }
+
+    .guide-text p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 16px;
+      font-weight: 300;
+    }
+
+    .guide-text p strong {
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    /* ─── FAQ ─── */
+    .faq {
+      background: var(--dark);
+    }
+
+    .faq-list {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .faq-item {
+      border-top: 1px solid rgba(184,149,90,0.12);
+    }
+
+    .faq-item:last-child { border-bottom: 1px solid rgba(184,149,90,0.12); }
+
+    .faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 0;
+      cursor: pointer;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--white);
+      gap: 24px;
+      list-style: none;
+    }
+
+    .faq-q::-webkit-details-marker { display: none; }
+
+    .faq-q .icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      stroke: var(--gold);
+      transition: transform 0.2s;
+    }
+
+    details[open] .faq-q .icon { transform: rotate(45deg); }
+
+    .faq-a {
+      padding: 0 0 28px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 600px;
+    }
+
+    /* ─── OFFERINGS ─── */
+    .offerings {
+      background: var(--deep);
+    }
+
+    .offering-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(184,149,90,0.1);
+      border: 1px solid rgba(184,149,90,0.1);
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .offering-card {
+      background: var(--deep);
+      padding: 48px 36px;
+      transition: background 0.2s;
+    }
+
+    .offering-card:hover { background: var(--dark); }
+
+    .offering-emoji {
+      font-size: 28px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .offering-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .offering-card p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* ─── FORM / CTA SECTION ─── */
+    .cta-section {
+      background: var(--mid);
+      text-align: center;
+      padding: 100px 80px;
+    }
+
+    .cta-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .cta-section .sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 48px;
+    }
+
+    .cta-box {
+      max-width: 520px;
+      margin: 0 auto;
+      background: var(--dark);
+      border: 1px solid rgba(184,149,90,0.15);
+      padding: 48px 48px 40px;
+    }
+
+    .cta-box h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .cta-box .form-note {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .form-input {
+      background: var(--mid);
+      border: 1px solid rgba(184,149,90,0.2);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      padding: 14px 18px;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-input:focus {
+      border-color: rgba(184,149,90,0.6);
+    }
+
+    .form-input::placeholder { color: var(--muted); }
+
+    select.form-input option { background: var(--mid); }
+
+    .btn-form {
+      width: 100%;
+      background: var(--gold);
+      color: var(--deep);
+      border: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 16px;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 8px;
+    }
+
+    .btn-form:hover { background: var(--gold-light); }
+
+    .form-legal {
+      margin-top: 16px;
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--deep);
+      border-top: 1px solid rgba(184,149,90,0.1);
+      padding: 48px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    footer img { height: 36px; opacity: 0.7; }
+
+    footer p {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .footer-right {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: right;
+      line-height: 1.6;
+    }
+
+    /* ─── URGENCY BANNER ─── */
+    .urgency {
+      background: rgba(184,149,90,0.08);
+      border-top: 1px solid rgba(184,149,90,0.2);
+      border-bottom: 1px solid rgba(184,149,90,0.2);
+      text-align: center;
+      padding: 14px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      section { padding: 72px 24px; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 100px 24px 64px;
+        min-height: auto;
+      }
+
+      .hero-image { display: none; }
+
+      .steps {
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+      }
+
+      .steps::before { display: none; }
+
+      .guide-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .guide-image { max-width: 360px; }
+
+      .offering-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-section { padding: 72px 24px; }
+      .cta-box { padding: 36px 28px; }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 24px;
+      }
+
+      .footer-right { text-align: center; }
+    }
+
+    @media (max-width: 600px) {
+      .steps { grid-template-columns: 1fr; }
+      .session-meta { flex-direction: column; gap: 16px; }
+      .divider-line { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="logo">
+      <img src="https://storage.files-vault.com/landing_pages/73158/6f8bfca8e9d8dd9318e968da3de5cb45-6f8bfca8e9d8dd9318e968da3de5cb45-77dfdfb681661a608e5910f2161cea78-336cae6687fbb9c58acd3c1c9e5a2b62-Shiva-Science-logo-500.webp" alt="Shiva Science" />
+    </a>
+    <a href="#reserve" class="cta-nav">Reserve Your Seat</a>
+  </nav>
+
+  <!-- URGENCY BANNER -->
+  <div class="urgency">⏳ &nbsp; Limited Slots Available — Booking Closes Soon</div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <span class="eyebrow">Live on Zoom · 29th June, 2026 · 7:00 PM IST</span>
+      <h1>Divine Session<br>with <em>Param Pujya<br>Bhaiyyaji</em></h1>
+      <p class="hero-sub">Ask your personal spiritual questions &amp; receive direct divine guidance</p>
+
+      <div class="session-meta">
+        <div class="meta-item">
+          <span class="meta-label">Date</span>
+          <span class="meta-value">29th June, 2026</span>
+        </div>
+        <div class="divider-line"></div>
+        <div class="meta-item">
+          <span class="meta-label">Time</span>
+          <span class="meta-value">7:00 PM (IST)</span>
+        </div>
+        <div class="divider-line"></div>
+        <div class="meta-item">
+          <span class="meta-label">Registration</span>
+          <span class="meta-value">₹102 Only</span>
+        </div>
+      </div>
+
+      <a href="#reserve" class="btn-primary">Enroll Now &amp; Reserve Your Seat</a>
+      <p class="trust-line">Live Interactive Zoom Session · Authentic Guidance · All Levels Welcome</p>
+    </div>
+
+    <div class="hero-image">
+      <img
+        src="https://storage.files-vault.com/landing_pages/95124/0b3869c3af66e89464d1052705dcfd57-ffcffca9afa875030c0f1471180950e4-Add-a-heading-1.webp"
+        alt="Divine Session with Param Pujya Bhaiyyaji"
+      />
+    </div>
+  </section>
+
+  <!-- WHAT YOU'LL EXPERIENCE -->
+  <section class="experience">
+    <div class="section-header">
+      <span class="eyebrow">What You'll Experience</span>
+      <h2>Unlock Clarity, Healing &amp; Direction</h2>
+      <p>One transformational session. Real answers. Practical guidance.</p>
+    </div>
+
+    <div class="experience-grid">
+      <div class="exp-card">
+        <div class="exp-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </div>
+        <h3>Live Spiritual Answers</h3>
+        <p>Ask 1–2 personal spiritual questions and receive live, direct answers — not generalized advice.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3C7 3 3 7 3 12s4 9 9 9 9-4 9-9-4-9-9-9z"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3>Karmic &amp; Emotional Insight</h3>
+        <p>Gain insight into karmic and emotional blocks that silently shape your path and hold you back.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+        </div>
+        <h3>Sadhana &amp; Life Guidance</h3>
+        <p>Practical, safe spiritual guidance rooted in decades of tapasya and mantra sadhana.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <h3>Renewed Inner Clarity</h3>
+        <p>Leave with confidence, direction, and inner strength to move forward on your spiritual journey.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Personal Connection</h3>
+        <p>A rare opportunity for direct interaction with a realized spiritual master in an intimate live setting.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12c0-4.97-4.03-9-9-9S3 7.03 3 12s4.03 9 9 9 9-4.03 9-9z"/></svg>
+        </div>
+        <h3>Authentic &amp; Safe</h3>
+        <p>Grounded in decades of disciplined sadhana. Suitable for all levels of seekers, including beginners.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how">
+    <div class="section-header">
+      <span class="eyebrow">The Process</span>
+      <h2>How the Divine Session Works</h2>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Enroll</h3>
+        <p>Secure your spot by completing the paid registration. You'll receive your Zoom link and session details.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Submit Your Question</h3>
+        <p>Prepare 1–2 clear, focused questions in advance to make the best use of the live session.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Join on Zoom</h3>
+        <p>At session time, join using the same name you used for registration.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Receive Guidance</h3>
+        <p>Get direct, live answers and spiritual insight to move forward with confidence and inner strength.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDE -->
+  <section class="guide">
+    <div class="guide-inner">
+      <div class="guide-image">
+        <img
+          src="https://storage.files-vault.com/landing_pages/95084/d48ff18cfffec5acfb50331ddd0a79db-d48ff18cfffec5acfb50331ddd0a79db-379c8ddc7041d9adb69309d78aa82d33-379c8ddc7041d9adb69309d78aa82d33-Screenshot-2026-01-05-115826.webp"
+          alt="Param Pujya Bhaiyyaji"
+        />
+      </div>
+      <div class="guide-text">
+        <span class="eyebrow">Meet Your Guide</span>
+        <h2>Param Pujya<br>Bhaiyyaji</h2>
+        <p class="guide-title">India's Leading Spiritual Healer &amp; Master of Shiva Science</p>
+        <p>Param Pujya Bhaiyyaji is a realized yogi carrying the <strong>living wisdom of the Ancient Science of Shiva</strong>. Initiated at a young age by his Guru Gurubhagwan Shivdutta Maharaj, he dedicated his life to deep tapasya, mantra sadhana, and spiritual transformation.</p>
+        <p>With decades of disciplined practice, he has guided thousands toward <strong>emotional liberation, karmic cleansing, spiritual awakening, and clarity of purpose</strong>.</p>
+        <p>This is not just guidance — it is inner transformation.</p>
+        <br>
+        <a href="#reserve" class="btn-primary">Reserve Your Seat — ₹102</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="section-header">
+      <span class="eyebrow">Frequently Asked Questions</span>
+      <h2>Everything You Need to Know</h2>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">
+          What kind of questions can I ask?
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+        </summary>
+        <p class="faq-a">Spiritual journey, emotional struggles, karmic blocks, sadhana, or life purpose. Please prepare 1–2 clear and focused questions in advance.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          How many questions are allowed per registration?
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+        </summary>
+        <p class="faq-a">Each registration allows 1–2 focused questions. This ensures meaningful, focused engagement for every participant.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          Is this suitable for beginners?
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+        </summary>
+        <p class="faq-a">Yes. The session is designed for all levels of seekers — whether you are just beginning your spiritual journey or have been practicing for years.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          What if I miss the live session?
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+        </summary>
+        <p class="faq-a">If you are unable to attend the live session, please choose the "Request a Call Back" option instead, and our team will guide you personally.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          Is this authentic and safe?
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+        </summary>
+        <p class="faq-a">Yes. The guidance offered is grounded in decades of disciplined sadhana and is entirely safe, practical, and spiritually rooted.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- FURTHER OFFERINGS -->
+  <section class="offerings">
+    <div class="section-header">
+      <span class="eyebrow">Further Ways to Support Your Growth</span>
+      <h2>Explore Our Offerings</h2>
+      <p>Designed to assist your wellbeing, balance, and inner clarity.</p>
+    </div>
+
+    <div class="offering-cards">
+      <div class="offering-card">
+        <span class="offering-emoji">🌀</span>
+        <h3>Chakra Meditation</h3>
+        <p>Balance your energy centers for inner peace, emotional flow, and deeper awareness — a practice that enhances your spiritual alignment.</p>
+      </div>
+      <div class="offering-card">
+        <span class="offering-emoji">🌿</span>
+        <h3>Healing Session</h3>
+        <p>Experience mind-body energy rebalancing and emotional release to soften blockages and promote inner harmony.</p>
+      </div>
+      <div class="offering-card">
+        <span class="offering-emoji">🩺</span>
+        <h3>Consult With Doctor</h3>
+        <p>Professional guidance for physical or emotional health questions — ideal when spiritual work intersects with wellbeing and you seek informed clarity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / FORM -->
+  <section class="cta-section" id="reserve">
+    <h2>Ready for Clarity, Healing &amp; Transformation?</h2>
+    <p class="sub">Limited slots available. Reserve yours before they're gone.</p>
+
+    <div class="cta-box">
+      <h3>Enroll in the Divine Session</h3>
+      <p class="form-note">Have questions? Our team will guide you personally.</p>
+
+      <div class="form-row">
+        <input type="text" class="form-input" placeholder="Your Full Name *" />
+        <input type="email" class="form-input" placeholder="Email Address *" />
+        <input type="tel" class="form-input" placeholder="Phone Number *" />
+        <select class="form-input">
+          <option value="" disabled selected>Select Your State *</option>
+          <option>Outside India</option>
+          <option>Andhra Pradesh</option>
+          <option>Arunachal Pradesh</option>
+          <option>Assam</option>
+          <option>Bihar</option>
+          <option>Chandigarh (UT)</option>
+          <option>Chhattisgarh</option>
+          <option>Delhi (NCT)</option>
+          <option>Goa</option>
+          <option>Gujarat</option>
+          <option>Haryana</option>
+          <option>Himachal Pradesh</option>
+          <option>Jammu and Kashmir (UT)</option>
+          <option>Jharkhand</option>
+          <option>Karnataka</option>
+          <option>Kerala</option>
+          <option>Ladakh (UT)</option>
+          <option>Madhya Pradesh</option>
+          <option>Maharashtra</option>
+          <option>Manipur</option>
+          <option>Meghalaya</option>
+          <option>Mizoram</option>
+          <option>Nagaland</option>
+          <option>Odisha</option>
+          <option>Puducherry (UT)</option>
+          <option>Punjab</option>
+          <option>Rajasthan</option>
+          <option>Sikkim</option>
+          <option>Tamil Nadu</option>
+          <option>Telangana</option>
+          <option>Tripura</option>
+          <option>Uttar Pradesh</option>
+          <option>Uttarakhand</option>
+          <option>West Bengal</option>
+        </select>
+      </div>
+
+      <button class="btn-form">Pay ₹102 &amp; Reserve My Seat</button>
+      <p class="form-legal">All guidance is intended to support spiritual, emotional, and mental well-being. This does not replace medical or psychological treatment. Individual experiences may vary.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="https://storage.files-vault.com/landing_pages/73158/6f8bfca8e9d8dd9318e968da3de5cb45-6f8bfca8e9d8dd9318e968da3de5cb45-77dfdfb681661a608e5910f2161cea78-336cae6687fbb9c58acd3c1c9e5a2b62-Shiva-Science-logo-500.webp" alt="Shiva Science" />
+    <p>© 2025 Shiva Science. All Rights Reserved.</p>
+    <p class="footer-right">Live Divine Guidance on Zoom<br>29th June, 2026 · 7:00 PM IST</p>
+  </footer>
+
+</body>
+</html>
