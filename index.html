@@ -1,29 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Divine Session — Shiva Science</title>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1268133148686901');
+    fbq('track', 'PageView');
+    fbq('track', 'Purchase', {
+      value: 102,
+      currency: 'INR'
+    });
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1268133148686901&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --gold:       #b8955a;
-      --gold-light: #d4af78;
-      --gold-pale:  #f5edd9;
-      --deep:       #0f0c08;
-      --dark:       #1a1510;
-      --mid:        #2c241b;
-      --warm:       #3d3025;
-      --text:       #e8ddd0;
-      --muted:      #9e8e7a;
-      --white:      #fdf8f2;
-      --radius:     2px;
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    html { scroll-behavior: smooth; }
+    :root {
+      --gold: #b8955a;
+      --gold-light: #d4af78;
+      --gold-pale: #f5edd9;
+      --deep: #0f0c08;
+      --dark: #1a1510;
+      --mid: #2c241b;
+      --warm: #3d3025;
+      --text: #e8ddd0;
+      --muted: #9e8e7a;
+      --white: #fdf8f2;
+      --radius: 2px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -36,13 +70,15 @@
     /* ─── NAV ─── */
     nav {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 100;
       padding: 20px 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: linear-gradient(to bottom, rgba(15,12,8,0.95), transparent);
+      background: linear-gradient(to bottom, rgba(15, 12, 8, 0.95), transparent);
       backdrop-filter: blur(6px);
     }
 
@@ -66,7 +102,9 @@
       transition: background 0.2s;
     }
 
-    nav .cta-nav:hover { background: var(--gold-light); }
+    nav .cta-nav:hover {
+      background: var(--gold-light);
+    }
 
     /* ─── HERO ─── */
     .hero {
@@ -77,11 +115,13 @@
       padding: 120px 80px 80px;
       gap: 60px;
       background:
-        linear-gradient(135deg, rgba(15,12,8,0.97) 40%, rgba(44,36,27,0.92) 100%),
+        linear-gradient(135deg, rgba(15, 12, 8, 0.97) 40%, rgba(44, 36, 27, 0.92) 100%),
         url('https://storage.files-vault.com/landing_pages/95124/0b3869c3af66e89464d1052705dcfd57-ffcffca9afa875030c0f1471180950e4-Add-a-heading-1.webp') center/cover no-repeat;
     }
 
-    .hero-text { max-width: 560px; }
+    .hero-text {
+      max-width: 560px;
+    }
 
     .eyebrow {
       display: inline-block;
@@ -92,7 +132,7 @@
       color: var(--gold);
       margin-bottom: 24px;
       padding-bottom: 10px;
-      border-bottom: 1px solid rgba(184,149,90,0.35);
+      border-bottom: 1px solid rgba(184, 149, 90, 0.35);
     }
 
     .hero h1 {
@@ -148,7 +188,7 @@
 
     .divider-line {
       width: 1px;
-      background: rgba(184,149,90,0.3);
+      background: rgba(184, 149, 90, 0.3);
       align-self: stretch;
     }
 
@@ -189,8 +229,8 @@
       width: 100%;
       max-width: 480px;
       border-radius: 0;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.6);
-      border: 1px solid rgba(184,149,90,0.2);
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(184, 149, 90, 0.2);
     }
 
     /* ─── SECTION BASE ─── */
@@ -204,7 +244,9 @@
       margin: 0 auto 64px;
     }
 
-    .section-header .eyebrow { display: block; }
+    .section-header .eyebrow {
+      display: block;
+    }
 
     .section-header h2 {
       font-family: 'Cormorant Garamond', serif;
@@ -230,8 +272,8 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1px;
-      background: rgba(184,149,90,0.1);
-      border: 1px solid rgba(184,149,90,0.1);
+      background: rgba(184, 149, 90, 0.1);
+      border: 1px solid rgba(184, 149, 90, 0.1);
     }
 
     .exp-card {
@@ -240,12 +282,14 @@
       transition: background 0.2s;
     }
 
-    .exp-card:hover { background: var(--mid); }
+    .exp-card:hover {
+      background: var(--mid);
+    }
 
     .exp-icon {
       width: 36px;
       height: 36px;
-      border: 1px solid rgba(184,149,90,0.4);
+      border: 1px solid rgba(184, 149, 90, 0.4);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -253,7 +297,13 @@
       margin-bottom: 24px;
     }
 
-    .exp-icon svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+    .exp-icon svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+    }
 
     .exp-card h3 {
       font-family: 'Cormorant Garamond', serif;
@@ -288,7 +338,7 @@
       left: calc(12.5% + 20px);
       right: calc(12.5% + 20px);
       height: 1px;
-      background: linear-gradient(to right, transparent, rgba(184,149,90,0.4), transparent);
+      background: linear-gradient(to right, transparent, rgba(184, 149, 90, 0.4), transparent);
     }
 
     .step {
@@ -299,7 +349,7 @@
     .step-num {
       width: 56px;
       height: 56px;
-      border: 1px solid rgba(184,149,90,0.4);
+      border: 1px solid rgba(184, 149, 90, 0.4);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -348,16 +398,18 @@
 
     .guide-image img {
       width: 100%;
-      border: 1px solid rgba(184,149,90,0.2);
-      box-shadow: 0 32px 60px rgba(0,0,0,0.5);
+      border: 1px solid rgba(184, 149, 90, 0.2);
+      box-shadow: 0 32px 60px rgba(0, 0, 0, 0.5);
     }
 
     .guide-image::before {
       content: '';
       position: absolute;
-      top: -16px; left: -16px;
-      right: 16px; bottom: 16px;
-      border: 1px solid rgba(184,149,90,0.15);
+      top: -16px;
+      left: -16px;
+      right: 16px;
+      bottom: 16px;
+      border: 1px solid rgba(184, 149, 90, 0.15);
       pointer-events: none;
     }
 
@@ -405,10 +457,12 @@
     }
 
     .faq-item {
-      border-top: 1px solid rgba(184,149,90,0.12);
+      border-top: 1px solid rgba(184, 149, 90, 0.12);
     }
 
-    .faq-item:last-child { border-bottom: 1px solid rgba(184,149,90,0.12); }
+    .faq-item:last-child {
+      border-bottom: 1px solid rgba(184, 149, 90, 0.12);
+    }
 
     .faq-q {
       display: flex;
@@ -424,7 +478,9 @@
       list-style: none;
     }
 
-    .faq-q::-webkit-details-marker { display: none; }
+    .faq-q::-webkit-details-marker {
+      display: none;
+    }
 
     .faq-q .icon {
       width: 20px;
@@ -434,7 +490,9 @@
       transition: transform 0.2s;
     }
 
-    details[open] .faq-q .icon { transform: rotate(45deg); }
+    details[open] .faq-q .icon {
+      transform: rotate(45deg);
+    }
 
     .faq-a {
       padding: 0 0 28px;
@@ -453,8 +511,8 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1px;
-      background: rgba(184,149,90,0.1);
-      border: 1px solid rgba(184,149,90,0.1);
+      background: rgba(184, 149, 90, 0.1);
+      border: 1px solid rgba(184, 149, 90, 0.1);
       max-width: 960px;
       margin: 0 auto;
     }
@@ -465,7 +523,9 @@
       transition: background 0.2s;
     }
 
-    .offering-card:hover { background: var(--dark); }
+    .offering-card:hover {
+      background: var(--dark);
+    }
 
     .offering-emoji {
       font-size: 28px;
@@ -507,87 +567,20 @@
       font-style: italic;
       color: var(--muted);
       font-size: 18px;
-      margin-bottom: 48px;
+      margin-bottom: 40px;
     }
 
-    .cta-box {
-      max-width: 520px;
-      margin: 0 auto;
-      background: var(--dark);
-      border: 1px solid rgba(184,149,90,0.15);
-      padding: 48px 48px 40px;
-    }
-
-    .cta-box h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 24px;
-      font-weight: 400;
-      color: var(--white);
-      margin-bottom: 8px;
-    }
-
-    .cta-box .form-note {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 32px;
-    }
-
-    .form-row {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-
-    .form-input {
-      background: var(--mid);
-      border: 1px solid rgba(184,149,90,0.2);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      padding: 14px 18px;
-      width: 100%;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .form-input:focus {
-      border-color: rgba(184,149,90,0.6);
-    }
-
-    .form-input::placeholder { color: var(--muted); }
-
-    select.form-input option { background: var(--mid); }
-
-    .btn-form {
-      width: 100%;
-      background: var(--gold);
-      color: var(--deep);
-      border: none;
-      font-family: 'Inter', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 16px;
-      cursor: pointer;
-      transition: background 0.2s;
-      margin-top: 8px;
-    }
-
-    .btn-form:hover { background: var(--gold-light); }
-
-    .form-legal {
-      margin-top: 16px;
+    .cta-legal {
+      margin-top: 24px;
       font-size: 11px;
       color: var(--muted);
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     /* ─── FOOTER ─── */
     footer {
       background: var(--deep);
-      border-top: 1px solid rgba(184,149,90,0.1);
+      border-top: 1px solid rgba(184, 149, 90, 0.1);
       padding: 48px 80px;
       display: flex;
       align-items: center;
@@ -595,7 +588,10 @@
       gap: 24px;
     }
 
-    footer img { height: 36px; opacity: 0.7; }
+    footer img {
+      height: 36px;
+      opacity: 0.7;
+    }
 
     footer p {
       font-size: 12px;
@@ -612,9 +608,9 @@
 
     /* ─── URGENCY BANNER ─── */
     .urgency {
-      background: rgba(184,149,90,0.08);
-      border-top: 1px solid rgba(184,149,90,0.2);
-      border-bottom: 1px solid rgba(184,149,90,0.2);
+      background: rgba(184, 149, 90, 0.08);
+      border-top: 1px solid rgba(184, 149, 90, 0.2);
+      border-bottom: 1px solid rgba(184, 149, 90, 0.2);
       text-align: center;
       padding: 14px;
       font-size: 12px;
@@ -626,8 +622,13 @@
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
-      nav { padding: 16px 24px; }
-      section { padding: 72px 24px; }
+      nav {
+        padding: 16px 24px;
+      }
+
+      section {
+        padding: 72px 24px;
+      }
 
       .hero {
         grid-template-columns: 1fr;
@@ -635,28 +636,39 @@
         min-height: auto;
       }
 
-      .hero-image { display: none; }
+      .hero-image {
+        display: none;
+      }
 
       .steps {
         grid-template-columns: 1fr 1fr;
         gap: 48px;
       }
 
-      .steps::before { display: none; }
+      .steps::before {
+        display: none;
+      }
 
       .guide-inner {
         grid-template-columns: 1fr;
         gap: 48px;
       }
 
-      .guide-image { max-width: 360px; }
+      .guide-image {
+        max-width: 360px;
+      }
 
       .offering-cards {
         grid-template-columns: 1fr;
       }
 
-      .cta-section { padding: 72px 24px; }
-      .cta-box { padding: 36px 28px; }
+      .cta-section {
+        padding: 72px 24px;
+      }
+
+      .cta-box {
+        padding: 36px 28px;
+      }
 
       footer {
         flex-direction: column;
@@ -664,24 +676,39 @@
         padding: 40px 24px;
       }
 
-      .footer-right { text-align: center; }
+      .footer-right {
+        text-align: center;
+      }
     }
 
     @media (max-width: 600px) {
-      .steps { grid-template-columns: 1fr; }
-      .session-meta { flex-direction: column; gap: 16px; }
-      .divider-line { display: none; }
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .session-meta {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .divider-line {
+        display: none;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- NAV -->
   <nav>
     <a href="#" class="logo">
-      <img src="https://storage.files-vault.com/landing_pages/73158/6f8bfca8e9d8dd9318e968da3de5cb45-6f8bfca8e9d8dd9318e968da3de5cb45-77dfdfb681661a608e5910f2161cea78-336cae6687fbb9c58acd3c1c9e5a2b62-Shiva-Science-logo-500.webp" alt="Shiva Science" />
+      <img
+        src="https://storage.files-vault.com/landing_pages/73158/6f8bfca8e9d8dd9318e968da3de5cb45-6f8bfca8e9d8dd9318e968da3de5cb45-77dfdfb681661a608e5910f2161cea78-336cae6687fbb9c58acd3c1c9e5a2b62-Shiva-Science-logo-500.webp"
+        alt="Shiva Science" />
     </a>
-    <a href="#reserve" class="cta-nav">Reserve Your Seat</a>
+    <a href="https://paymentz.shivascience.com/product/21571/page/19343?new_2=true&staffId=0&ac=1" target="_blank"
+      class="cta-nav">Reserve Your Seat</a>
   </nav>
 
   <!-- URGENCY BANNER -->
@@ -711,15 +738,15 @@
         </div>
       </div>
 
-      <a href="#reserve" class="btn-primary">Enroll Now &amp; Reserve Your Seat</a>
+      <a href="https://paymentz.shivascience.com/product/21571/page/19343?new_2=true&staffId=0&ac=1" target="_blank"
+        class="btn-primary">Enroll Now &amp; Reserve Your Seat</a>
       <p class="trust-line">Live Interactive Zoom Session · Authentic Guidance · All Levels Welcome</p>
     </div>
 
     <div class="hero-image">
       <img
         src="https://storage.files-vault.com/landing_pages/95124/0b3869c3af66e89464d1052705dcfd57-ffcffca9afa875030c0f1471180950e4-Add-a-heading-1.webp"
-        alt="Divine Session with Param Pujya Bhaiyyaji"
-      />
+        alt="Divine Session with Param Pujya Bhaiyyaji" />
     </div>
   </section>
 
@@ -734,42 +761,60 @@
     <div class="experience-grid">
       <div class="exp-card">
         <div class="exp-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 7v5l3 3" />
+          </svg>
         </div>
         <h3>Live Spiritual Answers</h3>
         <p>Ask 1–2 personal spiritual questions and receive live, direct answers — not generalized advice.</p>
       </div>
       <div class="exp-card">
         <div class="exp-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 3C7 3 3 7 3 12s4 9 9 9 9-4 9-9-4-9-9-9z"/><path d="M12 8v4l3 3"/></svg>
+          <svg viewBox="0 0 24 24">
+            <path d="M12 3C7 3 3 7 3 12s4 9 9 9 9-4 9-9-4-9-9-9z" />
+            <path d="M12 8v4l3 3" />
+          </svg>
         </div>
         <h3>Karmic &amp; Emotional Insight</h3>
         <p>Gain insight into karmic and emotional blocks that silently shape your path and hold you back.</p>
       </div>
       <div class="exp-card">
         <div class="exp-icon">
-          <svg viewBox="0 0 24 24"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+          <svg viewBox="0 0 24 24">
+            <path d="M3 12h4l3 8 4-16 3 8h4" />
+          </svg>
         </div>
         <h3>Sadhana &amp; Life Guidance</h3>
         <p>Practical, safe spiritual guidance rooted in decades of tapasya and mantra sadhana.</p>
       </div>
       <div class="exp-card">
         <div class="exp-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+          </svg>
         </div>
         <h3>Renewed Inner Clarity</h3>
         <p>Leave with confidence, direction, and inner strength to move forward on your spiritual journey.</p>
       </div>
       <div class="exp-card">
         <div class="exp-icon">
-          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <svg viewBox="0 0 24 24">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
         </div>
         <h3>Personal Connection</h3>
         <p>A rare opportunity for direct interaction with a realized spiritual master in an intimate live setting.</p>
       </div>
       <div class="exp-card">
         <div class="exp-icon">
-          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12c0-4.97-4.03-9-9-9S3 7.03 3 12s4.03 9 9 9 9-4.03 9-9z"/></svg>
+          <svg viewBox="0 0 24 24">
+            <path d="M9 12l2 2 4-4" />
+            <path d="M21 12c0-4.97-4.03-9-9-9S3 7.03 3 12s4.03 9 9 9 9-4.03 9-9z" />
+          </svg>
         </div>
         <h3>Authentic &amp; Safe</h3>
         <p>Grounded in decades of disciplined sadhana. Suitable for all levels of seekers, including beginners.</p>
@@ -814,18 +859,21 @@
       <div class="guide-image">
         <img
           src="https://storage.files-vault.com/landing_pages/95084/d48ff18cfffec5acfb50331ddd0a79db-d48ff18cfffec5acfb50331ddd0a79db-379c8ddc7041d9adb69309d78aa82d33-379c8ddc7041d9adb69309d78aa82d33-Screenshot-2026-01-05-115826.webp"
-          alt="Param Pujya Bhaiyyaji"
-        />
+          alt="Param Pujya Bhaiyyaji" />
       </div>
       <div class="guide-text">
         <span class="eyebrow">Meet Your Guide</span>
         <h2>Param Pujya<br>Bhaiyyaji</h2>
         <p class="guide-title">India's Leading Spiritual Healer &amp; Master of Shiva Science</p>
-        <p>Param Pujya Bhaiyyaji is a realized yogi carrying the <strong>living wisdom of the Ancient Science of Shiva</strong>. Initiated at a young age by his Guru Gurubhagwan Shivdutta Maharaj, he dedicated his life to deep tapasya, mantra sadhana, and spiritual transformation.</p>
-        <p>With decades of disciplined practice, he has guided thousands toward <strong>emotional liberation, karmic cleansing, spiritual awakening, and clarity of purpose</strong>.</p>
+        <p>Param Pujya Bhaiyyaji is a realized yogi carrying the <strong>living wisdom of the Ancient Science of
+            Shiva</strong>. Initiated at a young age by his Guru Gurubhagwan Shivdutta Maharaj, he dedicated his life to
+          deep tapasya, mantra sadhana, and spiritual transformation.</p>
+        <p>With decades of disciplined practice, he has guided thousands toward <strong>emotional liberation, karmic
+            cleansing, spiritual awakening, and clarity of purpose</strong>.</p>
         <p>This is not just guidance — it is inner transformation.</p>
         <br>
-        <a href="#reserve" class="btn-primary">Reserve Your Seat — ₹102</a>
+        <a href="https://paymentz.shivascience.com/product/21571/page/19343?new_2=true&staffId=0&ac=1" target="_blank"
+          class="btn-primary">Reserve Your Seat — ₹102</a>
       </div>
     </div>
   </section>
@@ -841,37 +889,52 @@
       <details class="faq-item">
         <summary class="faq-q">
           What kind of questions can I ask?
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+            <path d="M12 5v14M5 12h14" />
+          </svg>
         </summary>
-        <p class="faq-a">Spiritual journey, emotional struggles, karmic blocks, sadhana, or life purpose. Please prepare 1–2 clear and focused questions in advance.</p>
+        <p class="faq-a">Spiritual journey, emotional struggles, karmic blocks, sadhana, or life purpose. Please prepare
+          1–2 clear and focused questions in advance.</p>
       </details>
       <details class="faq-item">
         <summary class="faq-q">
           How many questions are allowed per registration?
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+            <path d="M12 5v14M5 12h14" />
+          </svg>
         </summary>
-        <p class="faq-a">Each registration allows 1–2 focused questions. This ensures meaningful, focused engagement for every participant.</p>
+        <p class="faq-a">Each registration allows 1–2 focused questions. This ensures meaningful, focused engagement for
+          every participant.</p>
       </details>
       <details class="faq-item">
         <summary class="faq-q">
           Is this suitable for beginners?
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+            <path d="M12 5v14M5 12h14" />
+          </svg>
         </summary>
-        <p class="faq-a">Yes. The session is designed for all levels of seekers — whether you are just beginning your spiritual journey or have been practicing for years.</p>
+        <p class="faq-a">Yes. The session is designed for all levels of seekers — whether you are just beginning your
+          spiritual journey or have been practicing for years.</p>
       </details>
       <details class="faq-item">
         <summary class="faq-q">
           What if I miss the live session?
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+            <path d="M12 5v14M5 12h14" />
+          </svg>
         </summary>
-        <p class="faq-a">If you are unable to attend the live session, please choose the "Request a Call Back" option instead, and our team will guide you personally.</p>
+        <p class="faq-a">If you are unable to attend the live session, please choose the "Request a Call Back" option
+          instead, and our team will guide you personally.</p>
       </details>
       <details class="faq-item">
         <summary class="faq-q">
           Is this authentic and safe?
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5">
+            <path d="M12 5v14M5 12h14" />
+          </svg>
         </summary>
-        <p class="faq-a">Yes. The guidance offered is grounded in decades of disciplined sadhana and is entirely safe, practical, and spiritually rooted.</p>
+        <p class="faq-a">Yes. The guidance offered is grounded in decades of disciplined sadhana and is entirely safe,
+          practical, and spiritually rooted.</p>
       </details>
     </div>
   </section>
@@ -888,84 +951,43 @@
       <div class="offering-card">
         <span class="offering-emoji">🌀</span>
         <h3>Chakra Meditation</h3>
-        <p>Balance your energy centers for inner peace, emotional flow, and deeper awareness — a practice that enhances your spiritual alignment.</p>
+        <p>Balance your energy centers for inner peace, emotional flow, and deeper awareness — a practice that enhances
+          your spiritual alignment.</p>
       </div>
       <div class="offering-card">
         <span class="offering-emoji">🌿</span>
         <h3>Healing Session</h3>
-        <p>Experience mind-body energy rebalancing and emotional release to soften blockages and promote inner harmony.</p>
+        <p>Experience mind-body energy rebalancing and emotional release to soften blockages and promote inner harmony.
+        </p>
       </div>
       <div class="offering-card">
         <span class="offering-emoji">🩺</span>
         <h3>Consult With Doctor</h3>
-        <p>Professional guidance for physical or emotional health questions — ideal when spiritual work intersects with wellbeing and you seek informed clarity.</p>
+        <p>Professional guidance for physical or emotional health questions — ideal when spiritual work intersects with
+          wellbeing and you seek informed clarity.</p>
       </div>
     </div>
   </section>
 
-  <!-- CTA / FORM -->
+  <!-- CTA -->
   <section class="cta-section" id="reserve">
     <h2>Ready for Clarity, Healing &amp; Transformation?</h2>
     <p class="sub">Limited slots available. Reserve yours before they're gone.</p>
-
-    <div class="cta-box">
-      <h3>Enroll in the Divine Session</h3>
-      <p class="form-note">Have questions? Our team will guide you personally.</p>
-
-      <div class="form-row">
-        <input type="text" class="form-input" placeholder="Your Full Name *" />
-        <input type="email" class="form-input" placeholder="Email Address *" />
-        <input type="tel" class="form-input" placeholder="Phone Number *" />
-        <select class="form-input">
-          <option value="" disabled selected>Select Your State *</option>
-          <option>Outside India</option>
-          <option>Andhra Pradesh</option>
-          <option>Arunachal Pradesh</option>
-          <option>Assam</option>
-          <option>Bihar</option>
-          <option>Chandigarh (UT)</option>
-          <option>Chhattisgarh</option>
-          <option>Delhi (NCT)</option>
-          <option>Goa</option>
-          <option>Gujarat</option>
-          <option>Haryana</option>
-          <option>Himachal Pradesh</option>
-          <option>Jammu and Kashmir (UT)</option>
-          <option>Jharkhand</option>
-          <option>Karnataka</option>
-          <option>Kerala</option>
-          <option>Ladakh (UT)</option>
-          <option>Madhya Pradesh</option>
-          <option>Maharashtra</option>
-          <option>Manipur</option>
-          <option>Meghalaya</option>
-          <option>Mizoram</option>
-          <option>Nagaland</option>
-          <option>Odisha</option>
-          <option>Puducherry (UT)</option>
-          <option>Punjab</option>
-          <option>Rajasthan</option>
-          <option>Sikkim</option>
-          <option>Tamil Nadu</option>
-          <option>Telangana</option>
-          <option>Tripura</option>
-          <option>Uttar Pradesh</option>
-          <option>Uttarakhand</option>
-          <option>West Bengal</option>
-        </select>
-      </div>
-
-      <button class="btn-form">Pay ₹102 &amp; Reserve My Seat</button>
-      <p class="form-legal">All guidance is intended to support spiritual, emotional, and mental well-being. This does not replace medical or psychological treatment. Individual experiences may vary.</p>
-    </div>
+    <a href="https://paymentz.shivascience.com/product/21571/page/19343?new_2=true&staffId=0&ac=1" target="_blank"
+      class="btn-primary">Pay ₹102 &amp; Reserve My Seat</a>
+    <p class="cta-legal">All guidance is intended to support spiritual, emotional, and mental well-being.<br>This does
+      not replace medical or psychological treatment. Individual experiences may vary.</p>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <img src="https://storage.files-vault.com/landing_pages/73158/6f8bfca8e9d8dd9318e968da3de5cb45-6f8bfca8e9d8dd9318e968da3de5cb45-77dfdfb681661a608e5910f2161cea78-336cae6687fbb9c58acd3c1c9e5a2b62-Shiva-Science-logo-500.webp" alt="Shiva Science" />
+    <img
+      src="https://storage.files-vault.com/landing_pages/73158/6f8bfca8e9d8dd9318e968da3de5cb45-6f8bfca8e9d8dd9318e968da3de5cb45-77dfdfb681661a608e5910f2161cea78-336cae6687fbb9c58acd3c1c9e5a2b62-Shiva-Science-logo-500.webp"
+      alt="Shiva Science" />
     <p>© 2025 Shiva Science. All Rights Reserved.</p>
     <p class="footer-right">Live Divine Guidance on Zoom<br>29th June, 2026 · 7:00 PM IST</p>
   </footer>
 
 </body>
+
 </html>

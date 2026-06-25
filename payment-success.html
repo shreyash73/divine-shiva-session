@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seat Reserved — Divine Session · Shiva Science</title>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1268133148686901');
+  fbq('track', 'PageView');
+  fbq('track', 'Purchase', {
+    value: 102,
+    currency: 'INR'
+  });
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1268133148686901&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:       #b8955a;
+      --gold-light: #d4af78;
+      --gold-pale:  #f5edd9;
+      --deep:       #0f0c08;
+      --dark:       #1a1510;
+      --mid:        #2c241b;
+      --warm:       #3d3025;
+      --text:       #e8ddd0;
+      --muted:      #9e8e7a;
+      --white:      #fdf8f2;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--deep);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid rgba(184,149,90,0.1);
+    }
+
+    nav .logo img {
+      height: 40px;
+      filter: brightness(1.1);
+    }
+
+    /* ─── MAIN ─── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+    }
+
+    .card {
+      max-width: 600px;
+      width: 100%;
+      background: var(--dark);
+      border: 1px solid rgba(184,149,90,0.15);
+      padding: 64px 56px;
+      text-align: center;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── SUCCESS ICON ─── */
+    .icon-wrap {
+      width: 72px;
+      height: 72px;
+      border: 1px solid rgba(184,149,90,0.35);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 32px;
+      animation: pulse 2.4s ease infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(184,149,90,0); }
+      50%       { box-shadow: 0 0 0 10px rgba(184,149,90,0.08); }
+    }
+
+    .icon-wrap svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* draw-on animation for the checkmark */
+    .icon-wrap svg path {
+      stroke-dasharray: 50;
+      stroke-dashoffset: 50;
+      animation: draw 0.5s 0.4s ease forwards;
+    }
+
+    @keyframes draw {
+      to { stroke-dashoffset: 0; }
+    }
+
+    /* ─── EYEBROW ─── */
+    .eyebrow {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    /* ─── HEADLINE ─── */
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 40px;
+      font-weight: 300;
+    }
+
+    /* ─── DIVIDER ─── */
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: rgba(184,149,90,0.3);
+      margin: 0 auto 40px;
+    }
+
+    /* ─── SESSION DETAILS ─── */
+    .session-details {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      border: 1px solid rgba(184,149,90,0.12);
+      margin-bottom: 40px;
+    }
+
+    .detail-item {
+      flex: 1;
+      padding: 24px 20px;
+      border-right: 1px solid rgba(184,149,90,0.12);
+    }
+
+    .detail-item:last-child { border-right: none; }
+
+    .detail-label {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .detail-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--gold-light);
+    }
+
+    /* ─── NEXT STEPS ─── */
+    .steps-list {
+      text-align: left;
+      background: var(--mid);
+      border: 1px solid rgba(184,149,90,0.08);
+      padding: 32px 36px;
+      margin-bottom: 36px;
+    }
+
+    .steps-list h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .step-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .step-row:last-child { margin-bottom: 0; }
+
+    .step-num {
+      width: 24px;
+      height: 24px;
+      border: 1px solid rgba(184,149,90,0.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-text {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .step-text strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ─── IMPORTANT NOTE ─── */
+    .note {
+      background: rgba(184,149,90,0.06);
+      border-left: 2px solid var(--gold);
+      padding: 16px 20px;
+      text-align: left;
+      margin-bottom: 36px;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .note strong {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    /* ─── FOOTER ACTIONS ─── */
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--deep);
+      background: var(--gold);
+      padding: 16px 40px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      width: 100%;
+    }
+
+    .btn-primary:hover { background: var(--gold-light); }
+
+    .btn-ghost {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 8px;
+      transition: color 0.2s;
+    }
+
+    .btn-ghost:hover { color: var(--gold); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid rgba(184,149,90,0.1);
+      padding: 28px 40px;
+      text-align: center;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 600px) {
+      nav { padding: 16px 24px; }
+
+      .card { padding: 40px 24px; }
+
+      .session-details {
+        flex-direction: column;
+      }
+
+      .detail-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(184,149,90,0.12);
+      }
+
+      .detail-item:last-child { border-bottom: none; }
+
+      .steps-list { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="logo">
+      <img
+        src="https://storage.files-vault.com/landing_pages/73158/6f8bfca8e9d8dd9318e968da3de5cb45-6f8bfca8e9d8dd9318e968da3de5cb45-77dfdfb681661a608e5910f2161cea78-336cae6687fbb9c58acd3c1c9e5a2b62-Shiva-Science-logo-500.webp"
+        alt="Shiva Science"
+      />
+    </a>
+  </nav>
+
+  <!-- MAIN -->
+  <main>
+    <div class="card">
+
+      <!-- Icon -->
+      <div class="icon-wrap">
+        <svg viewBox="0 0 24 24">
+          <path d="M5 12l5 5L19 7" />
+        </svg>
+      </div>
+
+      <!-- Headline -->
+      <span class="eyebrow">Payment Confirmed</span>
+      <h1>Your Seat is<br><em>Reserved</em></h1>
+      <p class="subtitle">Thank you for registering. A confirmation has been sent to your email.</p>
+
+      <div class="divider"></div>
+
+      <!-- Session Details -->
+      <div class="session-details">
+        <div class="detail-item">
+          <p class="detail-label">Session</p>
+          <p class="detail-value">Divine Session</p>
+        </div>
+        <div class="detail-item">
+          <p class="detail-label">Date</p>
+          <p class="detail-value">29th June, 2026</p>
+        </div>
+        <div class="detail-item">
+          <p class="detail-label">Time</p>
+          <p class="detail-value">7:00 PM IST</p>
+        </div>
+        <div class="detail-item">
+          <p class="detail-label">Amount Paid</p>
+          <p class="detail-value">₹102</p>
+        </div>
+      </div>
+
+      <!-- Next Steps -->
+      <div class="steps-list">
+        <h2>What Happens Next</h2>
+
+        <div class="step-row">
+          <div class="step-num">1</div>
+          <p class="step-text"><strong>Check your email</strong> — your Zoom link and session details will arrive within a few minutes.</p>
+        </div>
+        <div class="step-row">
+          <div class="step-num">2</div>
+          <p class="step-text"><strong>Prepare your questions</strong> — you may ask 1–2 clear, focused spiritual questions. Think about them in advance.</p>
+        </div>
+        <div class="step-row">
+          <div class="step-num">3</div>
+          <p class="step-text"><strong>Join on Zoom on 29th June at 7:00 PM IST</strong> — use the exact name you registered with to be admitted.</p>
+        </div>
+      </div>
+
+      <!-- Note -->
+      <div class="note">
+        <strong>Important:</strong> Please join Zoom using your registered name. Late entries may not be admitted once guidance has begun. Keep your questions ready before joining.
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <a href="index.html" class="btn-primary">Return to Shiva Science</a>
+        <a href="mailto:support@shivascience.com" class="btn-ghost">Need help? Contact Us</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Shiva Science. All Rights Reserved. &nbsp;·&nbsp; All guidance offered supports spiritual and mental well-being and does not replace medical or psychological treatment.</p>
+  </footer>
+
+</body>
+</html>
